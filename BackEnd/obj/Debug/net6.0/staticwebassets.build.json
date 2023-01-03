@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "1JowiRPwUnPlBtUkY1OnoJ7qV5sukysPfYfhsM8vzcU=",
-  "Source": "DatingApp",
-  "BasePath": "_content/DatingApp",
+  "Hash": "cPqfaYa80spAnn83F5ijizHSf4K7X8YH25xJLDw7OM8=",
+  "Source": "BackEnd",
+  "BasePath": "_content/BackEnd",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
