@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d7K4pUId2Lbao/BBIHZjKhwFGCwfVvxEXtlIKVP6M9q54dY+FzmSMNCtH8+wNdK6wftBiv4R0osc7B8jXYthVw==",
+  "dgSpecHash": "ACP/N33vXra1mb942jUvmANwbvPEZ/0JUj4OrVlR3Db3nC70/OKl6VshRDqzdu2YvFVERE+cy6N6lwbEZvDTyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\backend\\BackEnd.csproj",
+  "projectFilePath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guild\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.1\\microsoft.data.sqlite.core.7.0.1.nupkg.sha512",
