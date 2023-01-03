@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\API\\API.csproj",
-      "projectName": "API",
-      "projectPath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\BackEnd\\BackEnd.csproj",
+      "projectName": "BackEnd",
+      "projectPath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\BackEnd\\BackEnd.csproj",
       "packagesPath": "C:\\Users\\guild\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\API\\obj\\",
+      "outputPath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\guild\\AppData\\Roaming\\NuGet\\NuGet.Config",
