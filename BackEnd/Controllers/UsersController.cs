@@ -5,9 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class UsersController : ControllerBase
+public class UsersController : BaseController
 {
     private readonly DataContext _context;
 
@@ -15,7 +13,7 @@ public class UsersController : ControllerBase
     {
         _context = context;
     }
-
+    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUser()
     {
@@ -30,4 +28,5 @@ public class UsersController : ControllerBase
         if (user != null) return user;
         return BadRequest($"A user whit the ID: {id}, was not found");
     }
+
 }
