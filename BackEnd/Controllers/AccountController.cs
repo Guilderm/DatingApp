@@ -28,7 +28,7 @@ public class AccountController : BaseController
         using var hmac = new HMACSHA512();
         var user = new AppUser
         {
-            UserName = registerDto.Username.ToLower(),
+            UserName = registerDto.Username,
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
             PasswordSalt = hmac.Key
         };
@@ -38,11 +38,11 @@ public class AccountController : BaseController
         return user;
     }
 
-    [HttpPost]
+    [HttpPost ("login")]
     public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
     {
         var user = await _dataContext.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
-        if (user == null) return Unauthorized("Wrong username");
+        if (user == null) return Unauthorized($"\" {loginDto.Username} \" is not a valid username");
         
         using var hmac = new HMACSHA512(user.PasswordSalt);
 
@@ -56,7 +56,7 @@ public class AccountController : BaseController
         return user;
     }
 
-    private async Task<bool> UserExists(string userName)
+    private async Task<bool> UserExists(string? userName)
     {
         return await _dataContext.Users.AnyAsync(x => x.UserName == userName.ToLower());
     }

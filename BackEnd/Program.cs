@@ -1,5 +1,4 @@
 using BackEnd.Data;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
