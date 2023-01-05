@@ -77,3 +77,11 @@ C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Ang
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\backend\obj\Debug\net6.0\BackEnd.pdb
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\backend\obj\Debug\net6.0\BackEnd.genruntimeconfig.cache
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\backend\obj\Debug\net6.0\ref\BackEnd.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

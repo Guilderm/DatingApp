@@ -3,6 +3,7 @@ using System.Text;
 using BackEnd.Data;
 using BackEnd.DTO;
 using BackEnd.Entities;
+using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,14 +12,16 @@ namespace BackEnd.Controllers;
 public class AccountController : BaseController
 {
     private readonly DataContext _dataContext;
+    private readonly ITokenService _tokenService;
 
-    public AccountController(DataContext context)
+    public AccountController(DataContext context, ITokenService tokenService)
     {
         _dataContext = context;
+        _tokenService = tokenService;
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
+    public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
         if (await UserExists(registerDto.Username))
             return BadRequest($"A user whit the name \" {registerDto.Username} \" already exist");
@@ -33,11 +36,15 @@ public class AccountController : BaseController
 
         _dataContext.Users.Add(user);
         await _dataContext.SaveChangesAsync();
-        return user;
+        return new UserDto
+        {
+            Username = user.UserName,
+            Token = _tokenService.CreateToken(user)
+        };
     }
 
     [HttpPost("login")]
-    public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+    public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         var user = await _dataContext.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
         if (user == null) return Unauthorized($"\" {loginDto.Username} \" is not a valid username");
@@ -50,7 +57,11 @@ public class AccountController : BaseController
             if (computeHash[i] != user.PasswordHash[i])
                 return Unauthorized("Wrong password");
 
-        return user;
+        return new UserDto
+        {
+            Username = user.UserName,
+            Token = _tokenService.CreateToken(user)
+        };
     }
 
     private async Task<bool> UserExists(string? userName)
