@@ -26,7 +26,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseCors(corsPolicyBuilder =>
-    corsPolicyBuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://192.168.2.171:4200"));
+    corsPolicyBuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://192.168.2.170:4200"));
 
 app.UseAuthentication();
 app.UseAuthorization();
