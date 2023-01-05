@@ -6,15 +6,19 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Dating App';
-  users:any;
-  constructor(private http: HttpClient) { }
+  users: any;
+
+  constructor(private http: HttpClient) {
+  }
+
   ngOnInit(): void {
     this.http.get('http://192.168.2.170:5000/api/Users')
       .subscribe({
-        next:response => this.users = response,
+        next: response => this.users = response,
         error: error => console.log(error),
-        complete:() => console.log('Request has completed')})
+        complete: () => console.log('Request has completed')
+      })
   }
 }
