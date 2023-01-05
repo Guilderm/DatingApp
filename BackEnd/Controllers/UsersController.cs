@@ -13,7 +13,7 @@ public class UsersController : BaseController
     {
         _context = context;
     }
-    
+
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUser()
     {
@@ -28,5 +28,4 @@ public class UsersController : BaseController
         if (user != null) return user;
         return BadRequest($"A user whit the ID: {id}, was not found");
     }
-
 }

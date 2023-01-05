@@ -21,9 +21,7 @@ public class AccountController : BaseController
     public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
     {
         if (await UserExists(registerDto.Username))
-        {
             return BadRequest($"A user whit the name \" {registerDto.Username} \" already exist");
-        }
 
         using var hmac = new HMACSHA512();
         var user = new AppUser
@@ -38,20 +36,19 @@ public class AccountController : BaseController
         return user;
     }
 
-    [HttpPost ("login")]
+    [HttpPost("login")]
     public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
     {
         var user = await _dataContext.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
         if (user == null) return Unauthorized($"\" {loginDto.Username} \" is not a valid username");
-        
+
         using var hmac = new HMACSHA512(user.PasswordSalt);
 
         var computeHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
-        for (int i = 0; i < computeHash.Length; i++)
-        {
-            if (computeHash[i] != user.PasswordHash[i]) return Unauthorized("Wrong password");
-        }
+        for (var i = 0; i < computeHash.Length; i++)
+            if (computeHash[i] != user.PasswordHash[i])
+                return Unauthorized("Wrong password");
 
         return user;
     }
