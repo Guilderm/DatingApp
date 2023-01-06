@@ -21,7 +21,8 @@ public class UsersController : BaseController
         var users = await _context.Users.ToListAsync();
         return users;
     }
-[Authorize]
+
+    [Authorize]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<AppUser>> GetUser(int id)
     {
