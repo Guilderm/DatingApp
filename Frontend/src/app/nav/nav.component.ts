@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { User } from '../_models/user';
-import { AccountService } from '../_services/account.service';
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +9,8 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService) {
+  }
 
   ngOnInit(): void {
   }
