@@ -9,11 +9,14 @@ import {AccountService} from './_services/account.service';
 })
 export class AppComponent implements OnInit {
   title = 'Dating App';
-  constructor(private accountService: AccountService) {}
+
+  constructor(private accountService: AccountService) {
+  }
 
   ngOnInit(): void {
     this.setCurrentUser()
   }
+
   setCurrentUser() {
     const userString = localStorage.getItem('user');
     if (!userString) return;
