@@ -6,10 +6,12 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Data;
+
 public class UserRepository : IUserRepository
 {
     private readonly DataContext _context;
     private readonly IMapper _mapper;
+
     public UserRepository(DataContext context, IMapper mapper)
     {
         _mapper = mapper;

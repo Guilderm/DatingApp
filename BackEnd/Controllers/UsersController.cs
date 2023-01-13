@@ -14,6 +14,7 @@ public class UsersController : BaseController
 {
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
+
     public UsersController(IUserRepository userRepository, IMapper mapper)
     {
         _mapper = mapper;
@@ -30,7 +31,7 @@ public class UsersController : BaseController
     [HttpGet("{username}")]
     public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
-        var user =       await _userRepository.GetMemberAsync(username);
+        var user = await _userRepository.GetMemberAsync(username);
         if (user != null) return user;
         return BadRequest($"A user whit the ID: {username}, was not found");
     }
