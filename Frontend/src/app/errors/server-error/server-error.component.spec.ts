@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ServerErrorComponent } from './server-error.component';
+import {ServerErrorComponent} from './server-error.component';
 
 describe('ServerErrorComponent', () => {
   let component: ServerErrorComponent;
@@ -8,9 +8,9 @@ describe('ServerErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServerErrorComponent ]
+      declarations: [ServerErrorComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ServerErrorComponent);
     component = fixture.componentInstance;
