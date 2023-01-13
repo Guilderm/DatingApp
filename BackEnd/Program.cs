@@ -1,11 +1,8 @@
-using System.Text;
-using BackEnd.Data;
 using BackEnd.Extensions;
-using BackEnd.Interfaces;
-using BackEnd.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using BackEnd.Middleware;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +19,9 @@ builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseSwagger();
 app.UseSwaggerUI();
 

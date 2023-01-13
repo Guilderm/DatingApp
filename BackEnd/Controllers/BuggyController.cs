@@ -21,7 +21,7 @@ public class BuggyController : BaseController
     {
         return "secret text";
     }
-    
+
     [HttpGet("Not-Found")]
     public ActionResult<AppUser> GetnotFound()
     {
@@ -34,8 +34,8 @@ public class BuggyController : BaseController
     public ActionResult<string> GetServerError()
     {
         var thing = _context.Users.Find(-1);
-        var thingToReturn = thing.ToString();
-        return thingToReturn;
+            var thingToReturn = thing.ToString();
+            return thingToReturn;
     }
 
     [HttpGet("bad-request")]
