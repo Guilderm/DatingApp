@@ -2,13 +2,13 @@ namespace BackEnd.DTO;
 
 public class UserDto
 {
-    private string? _username;
+    private string _username;
 
-    public string? Username
+    public string Username
     {
         get => _username;
         set => _username = value?.ToLower();
     }
 
-    public string? Token { get; set; }
+    public string Token { get; set; }
 }

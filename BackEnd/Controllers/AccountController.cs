@@ -64,7 +64,7 @@ public class AccountController : BaseController
         };
     }
 
-    private async Task<bool> UserExists(string? userName)
+    private async Task<bool> UserExists(string userName)
     {
         return await _dataContext.Users.AnyAsync(x => x.UserName == userName.ToLower());
     }

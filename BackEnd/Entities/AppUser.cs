@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using BackEnd.Extensions;
 
 namespace BackEnd.Entities;

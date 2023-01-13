@@ -23,7 +23,7 @@ public class BuggyController : BaseController
     }
 
     [HttpGet("Not-Found")]
-    public ActionResult<AppUser> GetnotFound()
+    public ActionResult<AppUser> GetNotFound()
     {
         var thing = _context.Users.Find(-1);
         if (thing == null) return NotFound();

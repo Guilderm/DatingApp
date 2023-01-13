@@ -4,12 +4,12 @@ namespace BackEnd.DTO;
 
 public class LoginDto
 {
-    private string? _username;
+    private string _username;
 
-    [Required] public string? Password { get; set; }
+    [Required] public string Password { get; set; }
 
     [Required]
-    public string? Username
+    public string Username
     {
         get => _username;
         set => _username = value?.ToLower();
