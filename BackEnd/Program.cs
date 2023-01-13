@@ -2,8 +2,6 @@ using BackEnd.Extensions;
 using BackEnd.Middleware;
 
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
