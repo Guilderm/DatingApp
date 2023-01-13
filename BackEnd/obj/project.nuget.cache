@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "9PgTwLQBbBAheKzLWfaRBZNW+Txo+pYADM+z2Qp1Afq8ZkVKMEvnC/MAaF/vadwoysKdZ3OwhHyF1VfcPLsM6g==",
+  "dgSpecHash": "cImzgpCGvS0uhq15iekmB5BfP8vsktcjcDtfGOvNhRzW82bs6vbEKvnbzoht59vPAIVOnVCdAvIJdu6PpR2b4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\guild\\OneDrive\\Vocational\\Cources\\Build an app with ASPNET Core and Angular from scratch\\Repository\\DatingApp\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\guild\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\guild\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",
-    "C:\\Users\\guild\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\guild\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.1\\microsoft.data.sqlite.core.7.0.1.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
     "C:\\Users\\guild\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.1\\microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",

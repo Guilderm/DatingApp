@@ -23,6 +23,6 @@ public class AppUser
 
      public int GetAge()
     {
-        return DateOfBirth.CalcuateAge();
+        return DateOfBirth.CalculateAge();
     }
 }

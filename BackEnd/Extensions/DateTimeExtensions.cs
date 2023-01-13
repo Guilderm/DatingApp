@@ -2,7 +2,7 @@ namespace BackEnd.Extensions;
 
 public static class DateTimeExtensions
 {
-    public static int CalcuateAge(this DateOnly dob)
+    public static int CalculateAge(this DateOnly dob)
     {
         var today = DateOnly.FromDateTime(DateTime.UtcNow);
 
