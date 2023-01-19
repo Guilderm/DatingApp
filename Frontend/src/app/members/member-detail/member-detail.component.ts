@@ -11,8 +11,8 @@ import { MembersService } from 'src/app/_services/members.service';
 })
 export class MemberDetailComponent implements OnInit {
   member: Member | undefined;
- galleryOptions: NgxGalleryOptions[] = [];
-galleryImages: NgxGalleryImage[] = [];
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
 
   constructor(private memberService: MembersService, private route: ActivatedRoute) { }
 
@@ -45,10 +45,12 @@ galleryImages: NgxGalleryImage[] = [];
   }
 
   loadMember() {
-    var username = this.route.snapshot.paramMap.get('username');
+    const username = this.route.snapshot.paramMap.get('username');
     if (!username) return;
+    console.log('username is ' + username);
     this.memberService.getMember(username).subscribe({
       next: member => {
+        console.log('member is ' + member);
         this.member = member;
         this.galleryImages = this.getImages();
       }
