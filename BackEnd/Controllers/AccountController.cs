@@ -4,11 +4,13 @@ using BackEnd.Data;
 using BackEnd.DTO;
 using BackEnd.Entities;
 using BackEnd.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Controllers;
 
+[Authorize]
 public class AccountController : BaseController
 {
     private readonly DataContext _dataContext;
