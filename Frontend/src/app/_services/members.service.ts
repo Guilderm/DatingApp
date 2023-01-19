@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { Member } from '../_models/member';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {environment} from 'src/environments/environment';
+import {Member} from '../_models/member';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ import { Member } from '../_models/member';
 export class MembersService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getMembers() {
     return this.http.get<Member[]>(this.baseUrl + 'users');

@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
