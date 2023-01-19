@@ -1,16 +1,16 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 using BackEnd.DTO;
 using BackEnd.Interfaces;
-using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BackEnd.Controllers;
 
 [Authorize]
 public class UsersController : BaseController
 {
-    private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
+    private readonly IUserRepository _userRepository;
 
     public UsersController(IUserRepository userRepository, IMapper mapper)
     {

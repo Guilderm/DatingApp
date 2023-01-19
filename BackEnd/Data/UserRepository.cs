@@ -1,8 +1,8 @@
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using BackEnd.DTO;
 using BackEnd.Entities;
 using BackEnd.Interfaces;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Data;

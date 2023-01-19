@@ -5,7 +5,6 @@ using BackEnd.Entities;
 using BackEnd.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 
-
 namespace BackEnd.Services;
 
 public class TokenService : ITokenService
