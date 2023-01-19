@@ -1,4 +1,4 @@
-namespace BackEnd.DTO;
+namespace BackEnd.DTOs;
 
 public class PhotoDto
 {

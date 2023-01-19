@@ -1,4 +1,4 @@
-using BackEnd.DTO;
+using BackEnd.DTOs;
 using BackEnd.Entities;
 
 namespace BackEnd.Interfaces;

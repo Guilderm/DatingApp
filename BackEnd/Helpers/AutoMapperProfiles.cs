@@ -1,5 +1,5 @@
 using AutoMapper;
-using BackEnd.DTO;
+using BackEnd.DTOs;
 using BackEnd.Entities;
 using BackEnd.Extensions;
 
@@ -14,5 +14,6 @@ public class AutoMapperProfiles : Profile
                 opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url))
             .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
         CreateMap<Photo, PhotoDto>();
+        CreateMap<MemberUpdateDto, AppUser>();
     }
 }

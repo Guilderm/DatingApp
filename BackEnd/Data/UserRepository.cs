@@ -1,6 +1,6 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using BackEnd.DTO;
+using BackEnd.DTOs;
 using BackEnd.Entities;
 using BackEnd.Interfaces;
 using Microsoft.EntityFrameworkCore;

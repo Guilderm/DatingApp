@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using BackEnd.Data;
-using BackEnd.DTO;
+using BackEnd.DTOs;
 using BackEnd.Entities;
 using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +9,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Controllers;
 
-public class AccountController : BaseController
+public class AccountApiController : BaseApiController
 {
     private readonly DataContext _dataContext;
     private readonly ITokenService _tokenService;
 
-    public AccountController(DataContext context, ITokenService tokenService)
+    public AccountApiController(DataContext context, ITokenService tokenService)
     {
         _dataContext = context;
         _tokenService = tokenService;

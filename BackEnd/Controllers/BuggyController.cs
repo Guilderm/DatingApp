@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackEnd.Controllers;
 
 [Route("api/[controller]")]
-public class BuggyController : BaseController
+public class BuggyApiController : BaseApiController
 {
     private readonly DataContext _context;
 
-    public BuggyController(DataContext context)
+    public BuggyApiController(DataContext context)
     {
         _context = context;
     }
