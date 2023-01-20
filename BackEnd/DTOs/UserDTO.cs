@@ -1,14 +1,9 @@
-namespace BackEnd.DTOs;
-
-public class UserDto
+namespace BackEnd.DTOs
 {
-    private string _username;
-
-    public string Username
+    public class UserDto
     {
-        get => _username;
-        set => _username = value?.ToLower();
+        public string Username { get; set; }
+        public string Token { get; set; }
+        public string PhotoUrl { get; set; }
     }
-
-    public string Token { get; set; }
 }

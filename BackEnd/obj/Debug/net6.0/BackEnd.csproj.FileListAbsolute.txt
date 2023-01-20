@@ -88,3 +88,5 @@ C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Ang
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Data\UserSeedData.json
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\guild\OneDrive\Vocational\Cources\Build an app with ASPNET Core and Angular from scratch\Repository\DatingApp\BackEnd\bin\Debug\net6.0\Newtonsoft.Json.dll
