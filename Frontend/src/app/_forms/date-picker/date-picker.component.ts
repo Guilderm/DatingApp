@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Self } from '@angular/core';
-import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import {Component, Input, Self} from '@angular/core';
+import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
+import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-date-picker',
@@ -20,6 +20,10 @@ export class DatePickerComponent implements ControlValueAccessor {
     }
   }
 
+  get control(): FormControl {
+    return this.ngControl.control as FormControl
+  }
+
   writeValue(obj: any): void {
   }
 
@@ -27,10 +31,6 @@ export class DatePickerComponent implements ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-  }
-
-  get control(): FormControl {
-    return this.ngControl.control as FormControl
   }
 
 }

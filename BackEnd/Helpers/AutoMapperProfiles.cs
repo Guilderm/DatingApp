@@ -4,6 +4,7 @@ using BackEnd.Entities;
 using BackEnd.Extensions;
 
 namespace BackEnd.Helpers
+
 ;
 
 public class AutoMapperProfiles : Profile
