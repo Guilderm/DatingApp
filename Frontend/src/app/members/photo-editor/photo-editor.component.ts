@@ -84,5 +84,4 @@ export class PhotoEditorComponent implements OnInit {
       }
     }
   }
-
 }
