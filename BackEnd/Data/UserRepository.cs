@@ -1,10 +1,10 @@
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using BackEnd.DTOs;
 using BackEnd.Entities;
-using BackEnd.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using BackEnd.Helpers;
+using BackEnd.Interfaces;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Data;
 
@@ -27,8 +27,8 @@ public class UserRepository : IUserRepository
             .SingleOrDefaultAsync();
     }
 
+
     public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
-    
     {
         var query = _context.Users.AsQueryable();
 
@@ -47,10 +47,9 @@ public class UserRepository : IUserRepository
         };
 
         return await PagedList<MemberDto>.CreateAsync(
-            query.AsNoTracking().ProjectTo<MemberDto>(_mapper.ConfigurationProvider), 
-            userParams.PageNumber, 
+            query.AsNoTracking().ProjectTo<MemberDto>(_mapper.ConfigurationProvider),
+            userParams.PageNumber,
             userParams.PageSize);
-
     }
 
     public async Task<AppUser> GetUserByIdAsync(int id)
