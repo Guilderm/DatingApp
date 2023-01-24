@@ -7,8 +7,8 @@ import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {FileUploadModule} from "ng2-file-upload";
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import {PaginationModule} from 'ngx-bootstrap/pagination';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import {TimeagoModule} from "ngx-timeago";
 
 @NgModule({
