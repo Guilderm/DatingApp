@@ -1,7 +1,7 @@
 using System.Text.Json;
-using BackEnd.Helpers;
+using API.Helpers;
 
-namespace BackEnd.Extensions;
+namespace API.Extensions;
 
 public static class HttpExtensions
 {

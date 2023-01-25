@@ -1,8 +1,8 @@
-using BackEnd.Extensions;
-using BackEnd.Interfaces;
+using API.Extensions;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace BackEnd.Helpers;
+namespace API.Helpers;
 
 public class LogUserActivity : IAsyncActionFilter
 {

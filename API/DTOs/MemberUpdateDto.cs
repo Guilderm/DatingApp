@@ -1,4 +1,4 @@
-namespace BackEnd.DTOs;
+namespace API.DTOs;
 
 public class MemberUpdateDto
 {

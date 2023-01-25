@@ -1,46 +1,47 @@
-using BackEnd.Data;
-using BackEnd.Entities;
+using API.Data;
+using API.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BackEnd.Controllers;
-
-[Route("api/[controller]")]
-public class BuggyApiController : BaseApiController
+namespace API.Controllers
 {
-    private readonly DataContext _context;
-
-    public BuggyApiController(DataContext context)
+    [Route("api/[controller]")]
+    public class BuggyApiController : BaseApiController
     {
-        _context = context;
-    }
+        private readonly DataContext _context;
 
-    [Authorize]
-    [HttpGet("auth")]
-    public ActionResult<string> GetSecret()
-    {
-        return "secret text";
-    }
+        public BuggyApiController(DataContext context)
+        {
+            _context = context;
+        }
 
-    [HttpGet("Not-Found")]
-    public ActionResult<AppUser> GetNotFound()
-    {
-        var thing = _context.Users.Find(-1);
-        if (thing == null) return NotFound();
-        return thing;
-    }
+        [Authorize]
+        [HttpGet("auth")]
+        public ActionResult<string> GetSecret()
+        {
+            return "secret text";
+        }
 
-    [HttpGet("Server-error")]
-    public ActionResult<string> GetServerError()
-    {
-        var thing = _context.Users.Find(-1);
-        var thingToReturn = thing.ToString();
-        return thingToReturn;
-    }
+        [HttpGet("Not-Found")]
+        public ActionResult<AppUser> GetNotFound()
+        {
+            var thing = _context.Users.Find(-1);
+            if (thing == null) return NotFound();
+            return thing;
+        }
 
-    [HttpGet("bad-request")]
-    public ActionResult<string> GetBadRequest()
-    {
-        return BadRequest("this was not a good request");
+        [HttpGet("Server-error")]
+        public ActionResult<string> GetServerError()
+        {
+            var thing = _context.Users.Find(-1);
+            var thingToReturn = thing.ToString();
+            return thingToReturn;
+        }
+
+        [HttpGet("bad-request")]
+        public ActionResult<string> GetBadRequest()
+        {
+            return BadRequest("this was not a good request");
+        }
     }
 }

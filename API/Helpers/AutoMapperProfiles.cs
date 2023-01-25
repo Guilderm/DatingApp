@@ -1,9 +1,9 @@
 using AutoMapper;
-using BackEnd.DTOs;
-using BackEnd.Entities;
-using BackEnd.Extensions;
+using API.DTOs;
+using API.Entities;
+using API.Extensions;
 
-namespace BackEnd.Helpers
+namespace API.Helpers
 
 ;
 

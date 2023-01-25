@@ -1,6 +1,6 @@
-using BackEnd.Extensions;
+using API.Extensions;
 
-namespace BackEnd.Entities;
+namespace API.Entities;
 
 public class AppUser
 {
@@ -19,10 +19,12 @@ public class AppUser
     public string City { get; set; }
     public string Country { get; set; }
     public List<Photo> Photos { get; set; } = new();
+
     public int GetAge()
     {
         return DateOfBirth.CalculateAge();
     }
+
     public List<UserLike> LikedByUsers { get; set; }
     public List<UserLike> LikedUsers { get; set; }
 }

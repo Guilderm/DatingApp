@@ -1,10 +1,10 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using BackEnd.Entities;
+using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackEnd.Data;
+namespace API.Data;
 
 public class Seed
 {

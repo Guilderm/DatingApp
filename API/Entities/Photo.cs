@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BackEnd.Entities;
+namespace API.Entities;
 
 [Table("Photos")]
 public class Photo

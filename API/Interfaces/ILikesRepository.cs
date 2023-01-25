@@ -1,13 +1,12 @@
-using BackEnd.DTOs;
-using BackEnd.Entities;
-using BackEnd.Helpers;
+using API.DTOs;
+using API.Entities;
+using API.Helpers;
 
-namespace BackEnd.Interfaces
+namespace API.Interfaces;
+
+public interface ILikesRepository
 {
-    public interface ILikesRepository
-    {
-        Task<UserLike> GetUserLike(int sourceUserId, int targetUserId);
-        Task<AppUser> GetUserWithLikes(int userId);
-        Task<PagedList<LikeDto>> GetUserLikes(LikesParams likesParams);
-    }
+    Task<UserLike> GetUserLike(int sourceUserId, int targetUserId);
+    Task<AppUser> GetUserWithLikes(int userId);
+    Task<PagedList<LikeDto>> GetUserLikes(LikesParams likesParams);
 }

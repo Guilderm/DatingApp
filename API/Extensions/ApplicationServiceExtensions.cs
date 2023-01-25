@@ -1,10 +1,10 @@
-using BackEnd.Data;
-using BackEnd.Helpers;
-using BackEnd.Interfaces;
-using BackEnd.Services;
+using API.Data;
+using API.Helpers;
+using API.Interfaces;
+using API.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackEnd.Extensions;
+namespace API.Extensions;
 
 public static class ApplicationServiceExtensions
 {

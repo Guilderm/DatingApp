@@ -1,10 +1,10 @@
-using BackEnd.Helpers;
-using BackEnd.Interfaces;
+using API.Helpers;
+using API.Interfaces;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.Extensions.Options;
 
-namespace BackEnd.Services;
+namespace API.Services;
 
 public class PhotoService : IPhotoService
 {
