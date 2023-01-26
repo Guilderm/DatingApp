@@ -1,14 +1,16 @@
 using API.Data;
+using API.Entities;
 using API.Extensions;
 using API.Middleware;
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -19,7 +21,6 @@ builder.Services.AddIdentityServices(builder.Configuration);
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseSwagger();
@@ -42,8 +43,10 @@ IServiceProvider services = scope.ServiceProvider;
 try
 {
 	DataContext context = services.GetRequiredService<DataContext>();
+	UserManager<AppUser> userManager = services.GetRequiredService<UserManager<AppUser>>();
+	RoleManager<AppRole> roleManager = services.GetRequiredService<RoleManager<AppRole>>();
 	await context.Database.MigrateAsync();
-	await Seed.SeedUsers(context);
+	await Seed.SeedUsers(userManager, roleManager);
 }
 catch (Exception ex)
 {

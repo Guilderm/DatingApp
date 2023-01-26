@@ -1,5 +1,9 @@
-﻿namespace API.Entities;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class AppUserRole
+namespace API.Entities;
+
+public class AppUserRole : IdentityUserRole<int>
 {
+	public AppUser User { get; set; }
+	public AppRole Role { get; set; }
 }

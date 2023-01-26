@@ -1,5 +1,6 @@
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 
@@ -10,7 +11,6 @@ namespace API.Data;
 public class LikesRepository : ILikesRepository
 {
 	private readonly DataContext _context;
-
 	public LikesRepository(DataContext context)
 	{
 		_context = context;
@@ -39,8 +39,7 @@ public class LikesRepository : ILikesRepository
 		{
 			UserName = user.UserName,
 			KnownAs = user.KnownAs,
-			Age = user.GetAge(),
-			//Age = user.DateOfBirth.CalcuateAge(),
+			Age = user.DateOfBirth.CalculateAge(),
 			PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain).Url,
 			City = user.City,
 			Id = user.Id
