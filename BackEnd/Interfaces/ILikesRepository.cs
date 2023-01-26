@@ -1,8 +1,8 @@
-using BackEnd.DTOs;
-using BackEnd.Entities;
-using BackEnd.Helpers;
+using API.DTOs;
+using API.Entities;
+using API.Helpers;
 
-namespace BackEnd.Interfaces;
+namespace API.Interfaces;
 
 public interface ILikesRepository
 {

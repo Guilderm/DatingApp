@@ -1,8 +1,8 @@
-using BackEnd.Errors;
+using API.Errors;
 using System.Net;
 using System.Text.Json;
 
-namespace BackEnd.Middleware;
+namespace API.Middleware;
 
 public class ExceptionMiddleware
 {

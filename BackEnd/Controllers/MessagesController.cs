@@ -1,11 +1,12 @@
+using API.DTOs;
+using API.Entities;
+using API.Extensions;
+using API.Helpers;
+using API.Interfaces;
 using AutoMapper;
-using BackEnd.Entities;
-using BackEnd.Extensions;
-using BackEnd.Helpers;
-using BackEnd.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BackEnd.Controllers
+namespace API.Controllers
 {
     public class MessagesController : BaseApiController
     {

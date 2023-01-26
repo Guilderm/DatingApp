@@ -1,11 +1,11 @@
-using BackEnd.Entities;
-using BackEnd.Interfaces;
+using API.Entities;
+using API.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace BackEnd.Services;
+namespace API.Services;
 
 public class TokenService : ITokenService
 {
@@ -21,8 +21,8 @@ public class TokenService : ITokenService
     {
         List<Claim> claims = new()
         {
-            new(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
-            new(JwtRegisteredClaimNames.UniqueName, user.UserName)
+            new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
         };
 
         SigningCredentials credentials = new(_key, SecurityAlgorithms.HmacSha512Signature);

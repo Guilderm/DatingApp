@@ -1,10 +1,10 @@
-using BackEnd.DTOs;
-using BackEnd.Entities;
-using BackEnd.Helpers;
-using BackEnd.Interfaces;
+using API.DTOs;
+using API.Entities;
+using API.Helpers;
+using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackEnd.Data;
+namespace API.Data;
 
 public class LikesRepository : ILikesRepository
 {

@@ -1,4 +1,4 @@
-namespace BackEnd.Entities;
+namespace API.Entities;
 
 public class UserLike
 {
