@@ -1,34 +1,39 @@
+using API.Entities;
+
+using Microsoft.EntityFrameworkCore;
+
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using API.Entities;
-using Microsoft.EntityFrameworkCore;
 
-namespace API.Data
+namespace API.Data;
+
+public class Seed
 {
-    public class Seed
-    {
-        public static async Task SeedUsers(DataContext context)
-        {
-            if (await context.Users.AnyAsync()) return;
+	public static async Task SeedUsers(DataContext context)
+	{
+		if (await context.Users.AnyAsync())
+		{
+			return;
+		}
 
-            var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
-            _ = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+		string userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
 
-            var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
+		_ = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-            foreach (var user in users)
-            {
-                using var hmac = new HMACSHA512();
+		List<AppUser> users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
-                user.UserName = user.UserName.ToLower();
-                user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
-                user.PasswordSalt = hmac.Key;
+		foreach (AppUser user in users)
+		{
+			using var hmac = new HMACSHA512();
 
-                context.Users.Add(user);
-            }
+			user.UserName = user.UserName.ToLower();
+			user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
+			user.PasswordSalt = hmac.Key;
 
-            await context.SaveChangesAsync();
-        }
-    }
+			_ = context.Users.Add(user);
+		}
+
+		_ = await context.SaveChangesAsync();
+	}
 }
