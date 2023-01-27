@@ -18,8 +18,7 @@ public class Seed
 		}
 
 		string userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
-
-		var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+		_ = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
 		List<AppUser> users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
