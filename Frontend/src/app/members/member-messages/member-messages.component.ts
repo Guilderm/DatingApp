@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Message } from 'src/app/_models/message';
-import { MessageService } from 'src/app/_services/message.service';
+import {ChangeDetectionStrategy, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {MessageService} from 'src/app/_services/message.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,7 +14,8 @@ export class MemberMessagesComponent implements OnInit {
   messageContent = '';
   loading = false;
 
-  constructor(public messageService: MessageService) { }
+  constructor(public messageService: MessageService) {
+  }
 
   ngOnInit(): void {
   }

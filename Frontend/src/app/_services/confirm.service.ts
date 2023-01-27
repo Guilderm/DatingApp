@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { map, Observable } from 'rxjs';
-import { ConfirmDialogComponent } from '../modals/confirm-dialog/confirm-dialog.component';
+import {Injectable} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {map, Observable} from 'rxjs';
+import {ConfirmDialogComponent} from '../modals/confirm-dialog/confirm-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ import { ConfirmDialogComponent } from '../modals/confirm-dialog/confirm-dialog.
 export class ConfirmService {
   bsModalRef?: BsModalRef<ConfirmDialogComponent>;
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService) {
+  }
 
   confirm(
     title = 'Confirmation',
