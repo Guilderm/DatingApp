@@ -1,26 +1,23 @@
 using API.Extensions;
 using API.Interfaces;
-
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace API.Helpers;
-
-public class LogUserActivity : IAsyncActionFilter
+namespace API.Helpers
 {
-	public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
-	{
-		ActionExecutedContext resultContext = await next();
+    public class LogUserActivity : IAsyncActionFilter
+    {
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        {
+            var resultContext = await next();
 
-		if (!resultContext.HttpContext.User.Identity.IsAuthenticated)
-		{
-			return;
-		}
+            if (!resultContext.HttpContext.User.Identity.IsAuthenticated) return;
 
-		int userId = resultContext.HttpContext.User.GetUserId();
+            var userId = resultContext.HttpContext.User.GetUserId();
 
-		IUserRepository repo = resultContext.HttpContext.RequestServices.GetRequiredService<IUserRepository>();
-		Entities.AppUser user = await repo.GetUserByIdAsync(userId);
-		user.LastActive = DateTime.UtcNow;
-		_ = await repo.SaveAllAsync();
-	}
+            var uow = resultContext.HttpContext.RequestServices.GetRequiredService<IUnitOfWork>();
+            var user = await uow.UserRepository.GetUserByIdAsync(userId);
+            user.LastActive  = DateTime.UtcNow;
+            await uow.Complete();
+        }
+    }
 }

@@ -23,6 +23,7 @@
         <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
       </li>
     </ul>
+
     <div *ngIf="(accountService.currentUser$  | async) as user" class="dropdown" dropdown>
       <img alt="user photo" src="{{user.photoUrl || './assets/user.png'}}">
       <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.knownAs}}</a>
@@ -31,6 +32,7 @@
         <a (click)="logout()" class="dropdown-item">Logout</a>
       </div>
     </div>
+
     <form #loginForm="ngForm" (ngSubmit)="login()" *ngIf="!(accountService.currentUser$ | async)" autocomplete="off"
           class="d-flex">
       <input [(ngModel)]="model.username" class="form-control me-2" name="username" placeholder="Username"
@@ -39,5 +41,6 @@
              type="password">
       <button class="btn btn-success" type="submit">Login</button>
     </form>
+
   </div>
 </nav>

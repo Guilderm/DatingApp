@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: ' http://192.168.2.170:5000/api/'
+  apiUrl: 'http://192.168.2.170:5000/api/',
+  hubUrl: 'http://192.168.2.170:5000/hubs/'
 };
 
 /*

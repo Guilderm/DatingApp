@@ -2,6 +2,7 @@ using API.Data;
 using API.Entities;
 using API.Extensions;
 using API.Middleware;
+using API.SignalR;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +27,11 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseCors(corsPolicyBuilder =>
-	corsPolicyBuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://192.168.2.170:4200"));
+app.UseCors(builder => builder
+	.AllowAnyHeader()
+	.AllowAnyMethod()
+	.AllowCredentials()
+	.WithOrigins("http://192.168.2.170:4200"));
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -38,6 +42,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapHub<PresenceHub>("hubs/presence");
+app.MapHub<MessageHub>("hubs/message");
+
 using IServiceScope scope = app.Services.CreateScope();
 IServiceProvider services = scope.ServiceProvider;
 try
@@ -46,6 +53,7 @@ try
 	UserManager<AppUser> userManager = services.GetRequiredService<UserManager<AppUser>>();
 	RoleManager<AppRole> roleManager = services.GetRequiredService<RoleManager<AppRole>>();
 	await context.Database.MigrateAsync();
+	_ = await context.Database.ExecuteSqlRawAsync("DELETE FROM [Connections]");
 	await Seed.SeedUsers(userManager, roleManager);
 }
 catch (Exception ex)
