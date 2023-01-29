@@ -3,26 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Frontend": {
+    "client": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "css",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -55,7 +38,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1.5mb",
+                  "maximumWarning": "1mb",
                   "maximumError": "2mb"
                 },
                 {
@@ -74,9 +57,9 @@
               "optimization": {
                 "scripts": true,
                 "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
+                     "minify": true,
+                     "inlineCritical": false
+                     },
                 "fonts": true
               }
             },
@@ -92,13 +75,18 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "sslCert": "./ssl/server.crt",
+            "sslKey": "./ssl/server.key",
+            "ssl": true
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Frontend:build:production"
+              "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "Frontend:build:development"
+              "browserTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -106,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Frontend:build"
+            "browserTarget": "client:build"
           }
         },
         "test": {
@@ -128,8 +116,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "6c10a60f-62f3-4e24-a141-e31e992a7d9c"
   }
 }

@@ -1,6 +1,6 @@
-import {Component, Input, Self} from '@angular/core';
-import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
-import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
+import { Component, Input, OnInit, Self } from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-date-picker',
@@ -18,19 +18,19 @@ export class DatePickerComponent implements ControlValueAccessor {
       containerClass: 'theme-red',
       dateInputFormat: 'DD MMMM YYYY'
     }
-  }
-
-  get control(): FormControl {
-    return this.ngControl.control as FormControl
-  }
+   }
 
   writeValue(obj: any): void {
   }
-
+  
   registerOnChange(fn: any): void {
   }
 
   registerOnTouched(fn: any): void {
+  }
+
+  get control(): FormControl {
+    return this.ngControl.control as FormControl
   }
 
 }
