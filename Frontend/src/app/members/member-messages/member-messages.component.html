@@ -1,8 +1,8 @@
 <div class="card">
-  <div #scrollMe
-       [scrollTop]="scrollMe.scrollHeight"
-       class="card-body"
+  <div class="card-body"
+       #scrollMe
        style="overflow: scroll; height: 535px"
+       [scrollTop]="scrollMe.scrollHeight"
   >
     <div *ngIf="(messageService.messageThread$ | async)?.length === 0">
       No messages yet... say hi by using the message box below
@@ -13,18 +13,18 @@
       <li *ngFor="let message of (messageService.messageThread$ | async)">
         <div>
                     <span class="chat-img float-end">
-                        <img alt="image of user"
-                             class="rounded-circle"
-                             src="{{message.senderPhotoUrl || './assets/user.png'}}">
+                        <img class="rounded-circle"
+                             src="{{message.senderPhotoUrl || './assets/user.png'}}"
+                             alt="image of user">
                     </span>
           <div class="chat-body">
             <div class="header">
               <small class="text-muted">
                 <span class="fa fa-clock-o">{{message.messageSent | timeago}}</span>
-                <span *ngIf="!message.dateRead
-                                    && message.senderUsername !== username" class="text-danger">(unread)</span>
-                <span *ngIf="message.dateRead
-                                    && message.senderUsername !== username" class="text-success">(read {{message.dateRead | timeago}})</span>
+                <span class="text-danger" *ngIf="!message.dateRead
+                                    && message.senderUsername !== username">(unread)</span>
+                <span class="text-success" *ngIf="message.dateRead
+                                    && message.senderUsername !== username">(read {{message.dateRead | timeago}})</span>
               </small>
             </div>
             <p>{{message.content}}</p>
@@ -38,12 +38,12 @@
     <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
       <div class="input-group">
         <input
-          [(ngModel)]="messageContent"
-          class="form-control input-sm"
           name="messageContent"
-          placeholder="Send a private message"
           required
-          type="text">
+          [(ngModel)]="messageContent"
+          type="text"
+          class="form-control input-sm"
+          placeholder="Send a private message">
         <div class="input-group-append">
           <button [disabled]="!messageForm.valid || loading"
                   class="btn btn-primary" type="submit">
